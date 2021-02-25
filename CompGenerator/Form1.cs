@@ -13,7 +13,7 @@ namespace CompGenerator
     public partial class Form1 : Form
     {
 
-        //Fields that show whether one of the role has a character in it or not.
+        //Fields that show whether one of the role slots has a character in it or not.
         bool tank1 = false;
         bool tank2 = false;
         bool dps1 = false;
@@ -22,8 +22,8 @@ namespace CompGenerator
         bool supp2 = false;
 
         /*
-         * ^
-         * These two are very inefficient. Find way to create new button property.
+         * initiates field showing that a character is still in first position.
+         * very inefficient. Find way to create new button property.
          * v
          */
 
@@ -44,12 +44,12 @@ namespace CompGenerator
         bool torbFirstPos = true;
         bool tracerFirstPos = true;
         bool widowFirstPos = true;
-        // ---------------------------
+        // -------------First position of tank bool--------------
         bool winstonFirstPos = true;
         bool zaryaFirstPos = true;
 
 
-        // Initial position of all characters
+        // Initial position of dps characters
         Point asheInitial = new Point(133, 150);
         Point bastionInitial = new Point(254, 150);
         Point creeInitial = new Point(375, 150);
@@ -67,7 +67,7 @@ namespace CompGenerator
         Point torbInitial = new Point(496, 344);
         Point tracerInitial = new Point(617, 344);
         Point widowInitial = new Point(738, 298);
-        //------------------------------------
+        //-------------Tanks-----------------------
         Point winstionInitial = new Point(183, 150);
         Point zaryaInitial = new Point(305, 298);
 
