@@ -527,9 +527,8 @@ namespace CompGenerator
         /*
          * Method controlling movement of character icon into and out of role slots.
          */
-        private void move(String use, Button self, String cRole)
+        private void move(String use, Button self, String role)
         {
-            String role = cRole;
             {
                 if (role == "dps")
                 {
