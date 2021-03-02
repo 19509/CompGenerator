@@ -12,6 +12,11 @@ namespace CompGenerator
 {
     public partial class Form1 : Form
     {
+        // Visibility fields will be used so no method pointers fall on individual button controls.
+        bool tankVisible = false;
+        bool dpsVisible = false;
+        bool suppVisible = false;
+
 
         //Fields that show whether one of the role slots has a character in it or not.
         bool tank1 = false;
@@ -47,6 +52,20 @@ namespace CompGenerator
         // -------------First position of tank bool--------------
         bool winstonFirstPos = true;
         bool zaryaFirstPos = true;
+        bool dvaFirstPos = true;
+        bool sigFirstPos = true;
+        bool ballFirstPos = true;
+        bool orisaFirstPos = true;
+        bool hogFirstPos = true;
+        bool reinFirstPos = true;
+        // ------------First Position of support bool-------------
+        bool moiraFirstPos = true;
+        bool anaFirstPos = true;
+        bool bapFirstPos = true;
+        bool brigFirstPos = true;
+        bool zenFirstPos = true;
+        bool mercyFirstPos = true;
+        bool lucioFirstPos = true;
 
 
         // Initial position of dps characters
@@ -70,6 +89,13 @@ namespace CompGenerator
         //-------------Tanks-----------------------
         Point winstionInitial = new Point(183, 150);
         Point zaryaInitial = new Point(305, 298);
+        Point dvaInitial = new Point(183, 298);
+        Point reinInitial = new Point(305, 150);
+        Point orisaInitial = new Point(427, 150);
+        Point hogInitial = new Point(427, 298);
+        Point sigInitial = new Point(549, 150);
+        Point ballInitial = new Point(549, 298);
+        //------------Supports---------------------
 
         public Form1()
         {
@@ -115,49 +141,7 @@ namespace CompGenerator
          */
         private void btnSupport_Click(object sender, EventArgs e)
         {
-            if (!btnAna.Visible)
-            {
-                btnAna.Visible = true;
-                btnBap.Visible = true;
-                btnBrig.Visible = true;
-                btnLucio.Visible = true;
-                btnMercy.Visible = true;
-                btnMoira.Visible = true;
-                btnZen.Visible = true;
-            }
-
-            if (btnBall.Visible)
-            {
-                btnBall.Visible = false;
-                btnDva.Visible = false;
-                btnWinston.Visible = false;
-                btnRein.Visible = false;
-                btnOrisa.Visible = false;
-                btnSig.Visible = false;
-                btnZarya.Visible = false;
-                btnHog.Visible = false;
-            }
-
-            if (btnGenji.Visible)
-            {
-                btnAshe.Visible = false;
-                btnBastion.Visible = false;
-                btnCree.Visible = false;
-                btnDoom.Visible = false;
-                btnEcho.Visible = false;
-                btnGenji.Visible = false;
-                btnHanzo.Visible = false;
-                btnJunk.Visible = false;
-                btnMei.Visible = false;
-                btnPharah.Visible = false;
-                btnReaper.Visible = false;
-                btnSoldier.Visible = false;
-                btnSombra.Visible = false;
-                btnSym.Visible = false;
-                btnTorb.Visible = false;
-                btnTracer.Visible = false;
-                btnWidow.Visible = false;
-            }
+            roleHide(false, false, true);
         }
 
         /*
@@ -165,49 +149,7 @@ namespace CompGenerator
          */
         private void btnTank_Click(object sender, EventArgs e)
         {
-            if (!btnBall.Visible)
-            {
-                btnBall.Visible = true;
-                btnDva.Visible = true;
-                btnWinston.Visible = true;
-                btnRein.Visible = true;
-                btnOrisa.Visible = true;
-                btnSig.Visible = true;
-                btnZarya.Visible = true;
-                btnHog.Visible = true;
-            }
-
-            if (btnAna.Visible)
-            {
-                btnAna.Visible = false;
-                btnBap.Visible = false;
-                btnBrig.Visible = false;
-                btnLucio.Visible = false;
-                btnMercy.Visible = false;
-                btnMoira.Visible = false;
-                btnZen.Visible = false;
-            }
-
-            if (btnGenji.Visible)
-            {
-                btnAshe.Visible = false;
-                btnBastion.Visible = false;
-                btnCree.Visible = false;
-                btnDoom.Visible = false;
-                btnEcho.Visible = false;
-                btnGenji.Visible = false;
-                btnHanzo.Visible = false;
-                btnJunk.Visible = false;
-                btnMei.Visible = false;
-                btnPharah.Visible = false;
-                btnReaper.Visible = false;
-                btnSoldier.Visible = false;
-                btnSombra.Visible = false;
-                btnSym.Visible = false;
-                btnTorb.Visible = false;
-                btnTracer.Visible = false;
-                btnWidow.Visible = false;
-            }
+            roleHide(true, false, false);
         }
 
         /*
@@ -215,52 +157,220 @@ namespace CompGenerator
          */
         private void btnDPS_Click(object sender, EventArgs e)
         {
-            if (!btnGenji.Visible)
-            {
-                btnAshe.Visible = true;
-                btnBastion.Visible = true;
-                btnCree.Visible = true;
-                btnDoom.Visible = true;
-                btnEcho.Visible = true;
-                btnGenji.Visible = true;
-                btnHanzo.Visible = true;
-                btnJunk.Visible = true;
-                btnMei.Visible = true;
-                btnPharah.Visible = true;
-                btnReaper.Visible = true;
-                btnSoldier.Visible = true;
-                btnSombra.Visible = true;
-                btnSym.Visible = true;
-                btnTorb.Visible = true;
-                btnTracer.Visible = true;
-                btnWidow.Visible = true;
-            }
-
-            if (btnAna.Visible)
-            {
-                btnAna.Visible = false;
-                btnBap.Visible = false;
-                btnBrig.Visible = false;
-                btnLucio.Visible = false;
-                btnMercy.Visible = false;
-                btnMoira.Visible = false;
-                btnZen.Visible = false;
-            }
-
-            if (btnBall.Visible)
-            {
-                btnBall.Visible = false;
-                btnDva.Visible = false;
-                btnWinston.Visible = false;
-                btnRein.Visible = false;
-                btnOrisa.Visible = false;
-                btnSig.Visible = false;
-                btnZarya.Visible = false;
-                btnHog.Visible = false;
-            }
+            roleHide(false, true, false);
         }
 
         
+        /*
+         * Allows swapping between role screens to reduce app clutter
+         */
+        private void roleHide(bool tank, bool dps, bool supp)
+        {
+            btnAshe.Visible = dps;
+            btnBastion.Visible = dps;
+            btnCree.Visible = dps;
+            btnDoom.Visible = dps;
+            btnEcho.Visible = dps;
+            btnGenji.Visible = dps;
+            btnHanzo.Visible = dps;
+            btnJunk.Visible = dps;
+            btnMei.Visible = dps;
+            btnPharah.Visible = dps;
+            btnReaper.Visible = dps;
+            btnSoldier.Visible = dps;
+            btnSombra.Visible = dps;
+            btnSym.Visible = dps;
+            btnTorb.Visible = dps;
+            btnTracer.Visible = dps;
+            btnWidow.Visible = dps;
+
+            btnAna.Visible = supp;
+            btnBap.Visible = supp;
+            btnBrig.Visible = supp;
+            btnLucio.Visible = supp;
+            btnMercy.Visible = supp;
+            btnMoira.Visible = supp;
+            btnZen.Visible = supp;
+
+            btnBall.Visible = tank;
+            btnDva.Visible = tank;
+            btnWinston.Visible = tank;
+            btnRein.Visible = tank;
+            btnOrisa.Visible = tank;
+            btnSig.Visible = tank;
+            btnZarya.Visible = tank;
+            btnHog.Visible = tank;
+            checkTop();
+        }
+
+
+
+        /*
+         * When changing between role screens, checks to see if buttons are taking role slots. If they are, they retain visibility as the role screens are changed.
+         */
+        private void checkTop()
+        {
+            if (!asheFirstPos)
+            {
+                btnAshe.Visible = true;
+            }
+
+            if (!bastionFirstPos)
+            {
+                btnBastion.Visible = true;
+            }
+
+            if (!creeFirstPos)
+            {
+                btnCree.Visible = true;
+            }
+
+            if (!doomFirstPos)
+            {
+                btnDoom.Visible = true;
+            }
+
+            if (!echoFirstPos)
+            {
+                btnEcho.Visible = true;
+            }
+
+            if (!genjiFirstPos)
+            {
+                btnGenji.Visible = true;
+            }
+
+            if (!hanzoFirstPos)
+            {
+                btnHanzo.Visible = true;
+            }
+
+            if (!junkFirstPos)
+            {
+                btnJunk.Visible = true;
+            }
+
+            if (!meiFirstPos)
+            {
+                btnMei.Visible = true;
+            }
+
+            if (!pharahFirstPos)
+            {
+                btnPharah.Visible = true;
+            }
+
+            if (!reaperFirstPos)
+            {
+                btnReaper.Visible = true;
+            }
+
+            if (!soldierFirstPos)
+            {
+                btnSoldier.Visible = true;
+            }
+
+            if (!sombraFirstPos)
+            {
+                btnSombra.Visible = true;
+            }
+
+            if (!symFirstPos)
+            {
+                btnSym.Visible = true;
+            }
+
+            if (!torbFirstPos)
+            {
+                btnTorb.Visible = true;
+            }
+
+            if (!tracerFirstPos)
+            {
+                btnTracer.Visible = true;
+            }
+
+            if (!widowFirstPos)
+            {
+                btnWidow.Visible = true;
+            }
+
+            if (!winstonFirstPos)
+            {
+                btnWinston.Visible = true;
+            }
+
+            if (!dvaFirstPos)
+            {
+                btnDva.Visible = true;
+            }
+
+            if (!reinFirstPos)
+            {
+                btnRein.Visible = true;
+            }
+
+            if (!zaryaFirstPos)
+            {
+                btnZarya.Visible = true;
+            }
+
+            if (!orisaFirstPos)
+            {
+                btnOrisa.Visible = true;
+            }    
+
+            if (!hogFirstPos)
+            {
+                btnHog.Visible = true;
+            }
+
+            if (!sigFirstPos)
+            {
+                btnSig.Visible = true;
+            }
+
+            if (!ballFirstPos)
+            {
+                btnBall.Visible = true;
+            }
+
+            if (!moiraFirstPos)
+            {
+                btnMoira.Visible = true;
+            }
+
+            if (!anaFirstPos)
+            {
+                btnAna.Visible = true;
+            }
+
+            if (!bapFirstPos)
+            {
+                btnBap.Visible = true;
+            }
+
+            if (!brigFirstPos)
+            {
+                btnBrig.Visible = true;
+            }
+
+            if (!zenFirstPos)
+            {
+                btnZen.Visible = true;
+            }
+
+            if (!mercyFirstPos)
+            {
+                btnMercy.Visible = true;
+            }
+
+            if (!lucioFirstPos)
+            {
+                btnLucio.Visible = true;
+            }
+        }
+
         /*
          * Returns the initial position of a given character.
          */
@@ -344,6 +454,30 @@ namespace CompGenerator
 
                 case "zarya":
                     position = zaryaInitial;
+                    break;
+
+                case "dva":
+                    position = dvaInitial;
+                    break;
+
+                case "rein":
+                    position = reinInitial;
+                    break;
+
+                case "orisa":
+                    position = orisaInitial;
+                    break;
+
+                case "hog":
+                    position = hogInitial;
+                    break;
+
+                case "sigma":
+                    position = sigInitial;
+                    break;
+
+                case "ball":
+                    position = ballInitial;
                     break;
             }
             return position;
@@ -434,6 +568,30 @@ namespace CompGenerator
                 case "zarya":
                     name = zaryaFirstPos;
                     break;
+
+                case "dva":
+                    name = dvaFirstPos;
+                    break;
+
+                case "rein":
+                    name = reinFirstPos;
+                    break;
+
+                case "orisa":
+                    name = orisaFirstPos;
+                    break;
+
+                case "hog":
+                    name = hogFirstPos;
+                    break;
+
+                case "sigma":
+                    name = sigFirstPos;
+                    break;
+
+                case "ball":
+                    name = ballFirstPos;
+                    break;
             }
             return name;
             
@@ -520,6 +678,30 @@ namespace CompGenerator
 
                 case "zarya":
                     zaryaFirstPos = value;
+                    break;
+
+                case "dva":
+                    dvaFirstPos = value;
+                    break;
+
+                case "rein":
+                    reinFirstPos = value;
+                    break;
+
+                case "orisa":
+                    orisaFirstPos = value;
+                    break;
+
+                case "hog":
+                    hogFirstPos = value;
+                    break;
+
+                case "sigma":
+                    sigFirstPos = value;
+                    break;
+
+                case "ball":
+                    ballFirstPos = value;
                     break;
             }
         }
@@ -693,6 +875,36 @@ namespace CompGenerator
         private void btnZarya_Click(object sender, EventArgs e)
         {
             move("zarya", btnZarya, "tank");
+        }
+
+        private void btnDva_Click(object sender, EventArgs e)
+        {
+            move("dva", btnDva, "tank");
+        }
+
+        private void btnRein_Click(object sender, EventArgs e)
+        {
+            move("rein", btnRein, "tank");
+        }
+
+        private void btnOrisa_Click(object sender, EventArgs e)
+        {
+            move("orisa", btnOrisa, "tank");
+        }
+
+        private void btnHog_Click(object sender, EventArgs e)
+        {
+            move("hog", btnHog, "tank");
+        }
+
+        private void btnSig_Click(object sender, EventArgs e)
+        {
+            move("sigma", btnSig, "tank");
+        }
+
+        private void btnBall_Click(object sender, EventArgs e)
+        {
+            move("ball", btnBall, "tank");
         }
     }
 }

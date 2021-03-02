@@ -311,6 +311,7 @@ namespace CompGenerator
             this.btnRein.TabIndex = 26;
             this.btnRein.UseVisualStyleBackColor = true;
             this.btnRein.Visible = false;
+            this.btnRein.Click += new System.EventHandler(this.btnRein_Click);
             // 
             // btnOrisa
             // 
@@ -322,6 +323,7 @@ namespace CompGenerator
             this.btnOrisa.TabIndex = 27;
             this.btnOrisa.UseVisualStyleBackColor = true;
             this.btnOrisa.Visible = false;
+            this.btnOrisa.Click += new System.EventHandler(this.btnOrisa_Click);
             // 
             // btnSig
             // 
@@ -333,6 +335,7 @@ namespace CompGenerator
             this.btnSig.TabIndex = 28;
             this.btnSig.UseVisualStyleBackColor = true;
             this.btnSig.Visible = false;
+            this.btnSig.Click += new System.EventHandler(this.btnSig_Click);
             // 
             // btnDva
             // 
@@ -344,6 +347,7 @@ namespace CompGenerator
             this.btnDva.TabIndex = 29;
             this.btnDva.UseVisualStyleBackColor = true;
             this.btnDva.Visible = false;
+            this.btnDva.Click += new System.EventHandler(this.btnDva_Click);
             // 
             // btnZarya
             // 
@@ -367,6 +371,7 @@ namespace CompGenerator
             this.btnHog.TabIndex = 31;
             this.btnHog.UseVisualStyleBackColor = true;
             this.btnHog.Visible = false;
+            this.btnHog.Click += new System.EventHandler(this.btnHog_Click);
             // 
             // btnBall
             // 
@@ -378,6 +383,7 @@ namespace CompGenerator
             this.btnBall.TabIndex = 32;
             this.btnBall.UseVisualStyleBackColor = true;
             this.btnBall.Visible = false;
+            this.btnBall.Click += new System.EventHandler(this.btnBall_Click);
             // 
             // btnAshe
             // 
