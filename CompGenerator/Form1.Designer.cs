@@ -94,6 +94,7 @@ namespace CompGenerator
             this.btnAna.TabIndex = 0;
             this.btnAna.UseVisualStyleBackColor = true;
             this.btnAna.Visible = false;
+            this.btnAna.Click += new System.EventHandler(this.btnAna_Click_1);
             // 
             // btnTank
             // 
@@ -136,6 +137,7 @@ namespace CompGenerator
             this.btnBap.TabIndex = 10;
             this.btnBap.UseVisualStyleBackColor = true;
             this.btnBap.Visible = false;
+            this.btnBap.Click += new System.EventHandler(this.btnBap_Click);
             // 
             // btnMercy
             // 
@@ -160,6 +162,7 @@ namespace CompGenerator
             this.btnBrig.TabIndex = 12;
             this.btnBrig.UseVisualStyleBackColor = true;
             this.btnBrig.Visible = false;
+            this.btnBrig.Click += new System.EventHandler(this.btnBrig_Click);
             // 
             // btnMoira
             // 
@@ -172,6 +175,7 @@ namespace CompGenerator
             this.btnMoira.TabIndex = 13;
             this.btnMoira.UseVisualStyleBackColor = true;
             this.btnMoira.Visible = false;
+            this.btnMoira.Click += new System.EventHandler(this.btnMoira_Click);
             // 
             // btnLucio
             // 
@@ -184,6 +188,7 @@ namespace CompGenerator
             this.btnLucio.TabIndex = 14;
             this.btnLucio.UseVisualStyleBackColor = true;
             this.btnLucio.Visible = false;
+            this.btnLucio.Click += new System.EventHandler(this.btnLucio_Click);
             // 
             // btnZen
             // 
@@ -196,6 +201,7 @@ namespace CompGenerator
             this.btnZen.TabIndex = 15;
             this.btnZen.UseVisualStyleBackColor = true;
             this.btnZen.Visible = false;
+            this.btnZen.Click += new System.EventHandler(this.btnZen_Click);
             // 
             // lblCompInt
             // 
@@ -652,6 +658,12 @@ namespace CompGenerator
 
         #endregion
 
+        private System.Windows.Forms.PictureBox picTank1;
+        private System.Windows.Forms.PictureBox picTank2;
+        private System.Windows.Forms.PictureBox picDPS1;
+        private System.Windows.Forms.PictureBox picDPS2;
+        private System.Windows.Forms.PictureBox picSupport1;
+        private System.Windows.Forms.PictureBox picSupport2;
         private System.Windows.Forms.Button btnAna;
         private System.Windows.Forms.Button btnTank;
         private System.Windows.Forms.Button btnDPS;
@@ -664,12 +676,6 @@ namespace CompGenerator
         private System.Windows.Forms.Button btnZen;
         private System.Windows.Forms.Label lblCompInt;
         private System.Windows.Forms.Label lblMapInt;
-        private System.Windows.Forms.PictureBox picTank1;
-        private System.Windows.Forms.PictureBox picTank2;
-        private System.Windows.Forms.PictureBox picDPS1;
-        private System.Windows.Forms.PictureBox picDPS2;
-        private System.Windows.Forms.PictureBox picSupport1;
-        private System.Windows.Forms.PictureBox picSupport2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnWinston;
         private System.Windows.Forms.Button btnRein;

@@ -96,6 +96,13 @@ namespace CompGenerator
         Point sigInitial = new Point(549, 150);
         Point ballInitial = new Point(549, 298);
         //------------Supports---------------------
+        Point anaInitial = new Point(244, 150);
+        Point bapInitial = new Point(366, 150);
+        Point moiraInitial = new Point(487, 150);
+        Point mercyInitial = new Point(549, 298);
+        Point zenInitial = new Point(427, 298);
+        Point brigInitial = new Point(305, 298);
+        Point lucioInitial = new Point(183, 298);
 
         public Form1()
         {
@@ -166,6 +173,10 @@ namespace CompGenerator
          */
         private void roleHide(bool tank, bool dps, bool supp)
         {
+            tankVisible = tank;
+            dpsVisible = dps;
+            suppVisible = supp;
+
             btnAshe.Visible = dps;
             btnBastion.Visible = dps;
             btnCree.Visible = dps;
@@ -202,7 +213,6 @@ namespace CompGenerator
             btnHog.Visible = tank;
             checkTop();
         }
-
 
 
         /*
@@ -479,6 +489,34 @@ namespace CompGenerator
                 case "ball":
                     position = ballInitial;
                     break;
+
+                case "moira":
+                    position = moiraInitial;
+                    break;
+
+                case "ana":
+                    position = anaInitial;
+                    break;
+
+                case "lucio":
+                    position = lucioInitial;
+                    break;
+
+                case "zen":
+                    position = zenInitial;
+                    break;
+
+                case "bap":
+                    position = bapInitial;
+                    break;
+
+                case "brig":
+                    position = brigInitial;
+                    break;
+
+                case "mercy":
+                    position = mercyInitial;
+                    break;
             }
             return position;
         }
@@ -592,6 +630,34 @@ namespace CompGenerator
                 case "ball":
                     name = ballFirstPos;
                     break;
+
+                case "ana":
+                    name = anaFirstPos;
+                    break;
+
+                case "moira":
+                    name = moiraFirstPos;
+                    break;
+
+                case "bap":
+                    name = bapFirstPos;
+                    break;
+
+                case "zen":
+                    name = zenFirstPos;
+                    break;
+
+                case "brig":
+                    name = brigFirstPos;
+                    break;
+
+                case "lucio":
+                    name = lucioFirstPos;
+                    break;
+
+                case "mercy":
+                    name = mercyFirstPos;
+                    break;
             }
             return name;
             
@@ -703,6 +769,34 @@ namespace CompGenerator
                 case "ball":
                     ballFirstPos = value;
                     break;
+
+                case "ana":
+                    anaFirstPos = value;
+                    break;
+
+                case "moira":
+                    moiraFirstPos = value;
+                    break;
+
+                case "bap":
+                    bapFirstPos = value;
+                    break;
+
+                case "zen":
+                    zenFirstPos = value;
+                    break;
+
+                case "brig":
+                    brigFirstPos = value;
+                    break;
+
+                case "lucio":
+                    lucioFirstPos = value;
+                    break;
+
+                case "mercy":
+                    mercyFirstPos = value;
+                    break;
             }
         }
 
@@ -719,6 +813,7 @@ namespace CompGenerator
                         self.Location = DPS1(); // Moves the character into the first dps slot.
                         SetMe(use, false); // Sets the character's first position field to false.
                         dps1 = true;
+                        picDPS1.Visible = false;
                     }
 
                     else if (GetMe(use) && dps1 == true && dps2 == false)
@@ -726,6 +821,7 @@ namespace CompGenerator
                         self.Location = DPS2();
                         SetMe(use, false);
                         dps2 = true;
+                        picDPS2.Visible = false;
                     }
 
                     else if (!GetMe(use) && self.Location == DPS1()) // Checks if character is not in it's initial position and if the character is in the first dps slot
@@ -733,6 +829,7 @@ namespace CompGenerator
                         self.Location = GetLoc(use);
                         SetMe(use, true);
                         dps1 = false;
+                        picDPS1.Visible = true;
                     }
 
                     else if (!GetMe(use) && self.Location == DPS2())
@@ -740,6 +837,7 @@ namespace CompGenerator
                         self.Location = GetLoc(use);
                         SetMe(use, true);
                         dps2 = false;
+                        picDPS2.Visible = true;
                     }
                 }
                 // -----------------Same as above but for tank-----------------------------
@@ -750,6 +848,7 @@ namespace CompGenerator
                         self.Location = Tank1();
                         SetMe(use, false);
                         tank1 = true;
+                        picTank1.Visible = false;
                     }
 
                     else if (GetMe(use) && tank1 == true && tank2 == false)
@@ -757,6 +856,7 @@ namespace CompGenerator
                         self.Location = Tank2();
                         SetMe(use, false);
                         tank2 = true;
+                        picTank2.Visible = false;
                     }
 
                     else if (!GetMe(use) && self.Location == Tank1())
@@ -764,6 +864,7 @@ namespace CompGenerator
                         self.Location = GetLoc(use);
                         SetMe(use, true);
                         tank1 = false;
+                        picTank1.Visible = true;
                     }
 
                     else if (!GetMe(use) && self.Location == Tank2())
@@ -771,6 +872,42 @@ namespace CompGenerator
                         self.Location = GetLoc(use);
                         SetMe(use, true);
                         tank2 = false;
+                        picTank2.Visible = true;
+                    }
+                }
+                // Same as above but for support.
+                else if (role == "support")
+                {
+                    if (GetMe(use) && supp1 == false)
+                    {
+                        self.Location = Support1();
+                        SetMe(use, false);
+                        supp1 = true;
+                        picSupport1.Visible = false;
+                    }
+
+                    else if (GetMe(use) && supp1 == true && supp2 == false)
+                    {
+                        self.Location = Support2();
+                        SetMe(use, false);
+                        supp2 = true;
+                        picSupport2.Visible = false;
+                    }
+
+                    else if (!GetMe(use) && self.Location == Support1())
+                    {
+                        self.Location = GetLoc(use);
+                        SetMe(use, true);
+                        supp1 = false;
+                        picSupport1.Visible = true;
+                    }
+
+                    else if (!GetMe(use) && self.Location == Support2())
+                    {
+                        self.Location = GetLoc(use);
+                        SetMe(use, true);
+                        supp2 = false;
+                        picSupport2.Visible = true;
                     }
                 }
             }
@@ -867,6 +1004,8 @@ namespace CompGenerator
             move("widow", btnWidow, "dps");
         }
 
+        // Tank Break
+
         private void btnWinston_Click(object sender, EventArgs e)
         {
             move("winston", btnWinston, "tank");
@@ -905,6 +1044,38 @@ namespace CompGenerator
         private void btnBall_Click(object sender, EventArgs e)
         {
             move("ball", btnBall, "tank");
+        }
+
+        // Support Break
+
+        private void btnAna_Click_1(object sender, EventArgs e)
+        {
+            move("ana", btnAna, "support");
+        }
+
+        private void btnBap_Click(object sender, EventArgs e)
+        {
+            move("bap", btnBap, "support");
+        }
+
+        private void btnMoira_Click(object sender, EventArgs e)
+        {
+            move("moira", btnMoira, "support");
+        }
+
+        private void btnLucio_Click(object sender, EventArgs e)
+        {
+            move("lucio", btnLucio, "support");
+        }
+
+        private void btnBrig_Click(object sender, EventArgs e)
+        {
+            move("brig", btnBrig, "support");
+        }
+
+        private void btnZen_Click(object sender, EventArgs e)
+        {
+            move("zen", btnZen, "support");
         }
     }
 }
