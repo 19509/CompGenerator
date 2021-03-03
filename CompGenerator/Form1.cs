@@ -176,9 +176,9 @@ namespace CompGenerator
          */
         private void roleHide(bool tank, bool dps, bool supp)
         {
-            tankVisible = tank;
-            dpsVisible = dps;
-            suppVisible = supp;
+            tankScreen = tank;
+            dpsScreen = dps;
+            suppScreen = supp;
 
             btnAshe.Visible = dps;
             btnBastion.Visible = dps;
@@ -833,6 +833,10 @@ namespace CompGenerator
                         SetMe(use, true);
                         dps1 = false;
                         picDPS1.Visible = true;
+                        if (!dpsScreen) // Screen bug fix
+                        {
+                            self.Visible = false;
+                        }
                     }
 
                     else if (!GetMe(use) && self.Location == DPS2())
@@ -841,6 +845,10 @@ namespace CompGenerator
                         SetMe(use, true);
                         dps2 = false;
                         picDPS2.Visible = true;
+                        if (!dpsScreen)
+                        {
+                            self.Visible = false;
+                        }
                     }
                 }
                 // -----------------Same as above but for tank-----------------------------
@@ -868,6 +876,10 @@ namespace CompGenerator
                         SetMe(use, true);
                         tank1 = false;
                         picTank1.Visible = true;
+                        if (!tankScreen)
+                        {
+                            self.Visible = false;
+                        }
                     }
 
                     else if (!GetMe(use) && self.Location == Tank2())
@@ -876,6 +888,10 @@ namespace CompGenerator
                         SetMe(use, true);
                         tank2 = false;
                         picTank2.Visible = true;
+                        if (!tankScreen)
+                        {
+                            self.Visible = false;
+                        }
                     }
                 }
                 // Same as above but for support.
@@ -903,6 +919,10 @@ namespace CompGenerator
                         SetMe(use, true);
                         supp1 = false;
                         picSupport1.Visible = true;
+                        if (!suppScreen)
+                        {
+                            self.Visible = false;
+                        }
                     }
 
                     else if (!GetMe(use) && self.Location == Support2())
@@ -911,6 +931,10 @@ namespace CompGenerator
                         SetMe(use, true);
                         supp2 = false;
                         picSupport2.Visible = true;
+                        if (!suppScreen)
+                        {
+                            self.Visible = false;
+                        }
                     }
                 }
             }
