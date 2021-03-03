@@ -13,9 +13,9 @@ namespace CompGenerator
     public partial class Form1 : Form
     {
         // Visibility fields will be used so no method pointers fall on individual button controls.
-        bool tankVisible = false;
-        bool dpsVisible = false;
-        bool suppVisible = false;
+        bool tankScreen = false;
+        bool dpsScreen = false;
+        bool suppScreen = false;
 
 
         //Fields that show whether one of the role slots has a character in it or not.
@@ -142,6 +142,7 @@ namespace CompGenerator
         private void btnSupport_Click(object sender, EventArgs e)
         {
             roleHide(false, false, true);
+            suppScreen = true;
         }
 
         /*
@@ -150,6 +151,7 @@ namespace CompGenerator
         private void btnTank_Click(object sender, EventArgs e)
         {
             roleHide(true, false, false);
+            tankScreen = true;
         }
 
         /*
@@ -158,6 +160,7 @@ namespace CompGenerator
         private void btnDPS_Click(object sender, EventArgs e)
         {
             roleHide(false, true, false);
+            dpsScreen = true;
         }
 
         
