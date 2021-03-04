@@ -12,6 +12,13 @@ namespace CompGenerator
 {
     public partial class Form1 : Form
     {
+        // Will shows what character is in each slot
+        string supportSlot1 = "";
+        string supportSlot2 = "";
+
+        //
+        int compInt = 0;
+
         // Visibility fields will be used so no method pointers fall on individual button controls.
         bool tankScreen = false;
         bool dpsScreen = false;
@@ -803,12 +810,354 @@ namespace CompGenerator
             }
         }
 
+        // Checks the tanks to define the composition.
+        private string defineComp()
+        {
+            string comp = "";
+
+            if (!reinFirstPos)
+            {
+                if (!zaryaFirstPos || !dvaFirstPos)
+                {
+                    comp = "Brawl";
+                }
+
+                else if(!sigFirstPos || !orisaFirstPos)
+                {
+                    comp = "Double Shield";
+                }
+
+            }
+
+            else if(!winstonFirstPos)
+            {
+                if (!dvaFirstPos || !ballFirstPos)
+                {
+                    comp = "Dive";
+                }
+
+                else if (!zaryaFirstPos)
+                {
+                    comp = "Double Bubble";
+                }
+            }
+
+            else if(!hogFirstPos)
+            {
+                if (!orisaFirstPos)
+                {
+                    comp = "bunker";
+                }
+
+                else if (!zaryaFirstPos)
+                {
+                    comp = "zarya hog";
+                }
+
+                else if (!sigFirstPos)
+                {
+                    comp = "poke";
+                }
+            }
+
+            return comp;
+        }
+
+
+        //Gives a rating based on how well a support composition fits into the team comp.
+        private int checkSupp(string comp)
+        {
+            string suppVar = supportSlot1;
+            string suppVar2 = supportSlot2;
+            int suppCheck = 0;
+
+            switch (comp)
+            {
+                case "Brawl":
+                    if (!anaFirstPos)
+                    {
+                        if (!lucioFirstPos)
+                        {
+                            suppCheck = 0;
+                        }
+
+                        else if(!brigFirstPos)
+                        {
+                            suppCheck = 5;
+                        }
+
+                        else if(!zenFirstPos)
+                        {
+                            suppCheck = 5;
+                        }
+
+                        else if(!bapFirstPos)
+                        {
+                            suppCheck = 5;
+                        }
+
+                        else if(!mercyFirstPos)
+                        {
+                            suppCheck = 10;
+                        }
+
+                        else if (!moiraFirstPos)
+                        {
+                            suppCheck = 15;
+                        }
+                    }
+
+                    else if (!lucioFirstPos)
+                    {
+                        if (!brigFirstPos)
+                        {
+                            suppCheck = 20;
+                        }
+
+                        else if(!zenFirstPos)
+                        {
+                            suppCheck = 20;
+                        }
+
+                        else if(!bapFirstPos)
+                        {
+                            suppCheck = 10;
+                        }
+
+                        else if(!moiraFirstPos)
+                        {
+                            suppCheck = 5;
+                        }
+
+                        else if(!mercyFirstPos)
+                        {
+                            suppCheck = 20;
+                        }
+                    }
+
+                    else if(!brigFirstPos)
+                    {
+                        if (!zenFirstPos)
+                        {
+                            suppCheck = 20;
+                        }
+
+                        else if(!bapFirstPos)
+                        {
+                            suppCheck = 15;
+                        }
+
+                        else if(!moiraFirstPos)
+                        {
+                            suppCheck = 15;
+                        }
+
+                        else if(!mercyFirstPos)
+                        {
+                            suppCheck = 20;
+                        }
+                    }
+
+                    else if(!zenFirstPos)
+                    {
+                        if (!bapFirstPos)
+                        {
+                            suppCheck = 15;
+                        }
+
+                        else if(!moiraFirstPos)
+                        {
+                            suppCheck = 15;
+                        }
+
+                        else if(!mercyFirstPos)
+                        {
+                            suppCheck = 20;
+                        }
+                    }
+
+                    else if(!bapFirstPos)
+                    {
+                        if (!moiraFirstPos)
+                        {
+                            suppCheck = 20;
+                        }
+
+                        else if (!mercyFirstPos)
+                        {   
+                            suppCheck = 15;
+                        }
+                    }
+
+                    else if(!moiraFirstPos)
+                    {
+                        if (!mercyFirstPos)
+                        {
+                            suppCheck = 15;
+                        }
+                    }
+                    break;
+
+                case "Dive":
+                    if (!anaFirstPos)
+                    {
+                        if (!lucioFirstPos)
+                        {
+                            suppCheck = 0;
+                        }
+
+                        else if (!brigFirstPos)
+                        {
+                            suppCheck = 0;
+                        }
+
+                        else if (!zenFirstPos)
+                        {
+                            suppCheck = 5;
+                        }
+
+                        else if (!bapFirstPos)
+                        {
+                            suppCheck = 10;
+                        }
+
+                        else if (!mercyFirstPos)
+                        {
+                            suppCheck = 0;
+                        }
+
+                        else if (!moiraFirstPos)
+                        {
+                            suppCheck = 15;
+                        }
+                    }
+
+                    else if (!lucioFirstPos)
+                    {
+                        if (!brigFirstPos)
+                        {
+                            suppCheck = 15;
+                        }
+
+                        else if (!zenFirstPos)
+                        {
+                            suppCheck = 15;
+                        }
+
+                        else if (!bapFirstPos)
+                        {
+                            suppCheck = 10;
+                        }
+
+                        else if (!moiraFirstPos)
+                        {
+                            suppCheck = 20;
+                        }
+
+                        else if (!mercyFirstPos)
+                        {
+                            suppCheck = 10;
+                        }
+                    }
+
+                    else if (!brigFirstPos)
+                    {
+                        if (!zenFirstPos)
+                        {
+                            suppCheck = 10;
+                        }
+
+                        else if (!bapFirstPos)
+                        {
+                            suppCheck = 15;
+                        }
+
+                        else if (!moiraFirstPos)
+                        {
+                            suppCheck = 15;
+                        }
+
+                        else if (!mercyFirstPos)
+                        {
+                            suppCheck = 5;
+                        }
+                    }
+
+                    else if (!zenFirstPos)
+                    {
+                        if (!bapFirstPos)
+                        {
+                            suppCheck = 15;
+                        }
+
+                        else if (!moiraFirstPos)
+                        {
+                            suppCheck = 20;
+                        }
+
+                        else if (!mercyFirstPos)
+                        {
+                            suppCheck = 5;
+                        }
+                    }
+
+                    else if (!bapFirstPos)
+                    {
+                        if (!moiraFirstPos)
+                        {
+                            suppCheck = 25;
+                        }
+
+                        else if (!mercyFirstPos)
+                        {
+                            suppCheck = 15;
+                        }
+                    }
+
+                    else if (!moiraFirstPos)
+                    {
+                        if (!mercyFirstPos)
+                        {
+                            suppCheck = 15;
+                        }
+                    }
+                    break;
+            }
+
+            return suppCheck;
+        }
+
+        // Calculates a score for the usefulness of the comp
+        private int checkComp()
+        {
+            
+            int supportCheck = checkSupp(defineComp());
+
+            
+            compInt = (100 - supportCheck);
+
+
+            return compInt;
+        }
+
+        // Defines the comp in the label under the role slots.
+        private void changeComp()
+        {
+            string comp = defineComp();
+            int integrity = checkComp();
+
+            lblMapInt.Text = integrity.ToString();
+            lblCompInt.Text = comp;
+        }
+
         /*
          * Method controlling movement of character icon into and out of role slots.
          */
         private void move(String use, Button self, String role)
         {
             {
+                
+
                 if (role == "dps")
                 {
                     if (GetMe(use) && dps1 == false) // Checks if character is in it's initial position and if the first dps slot is occupied
@@ -903,6 +1252,7 @@ namespace CompGenerator
                         SetMe(use, false);
                         supp1 = true;
                         picSupport1.Visible = false;
+                        supportSlot1 = use;
                     }
 
                     else if (GetMe(use) && supp1 == true && supp2 == false)
@@ -911,6 +1261,7 @@ namespace CompGenerator
                         SetMe(use, false);
                         supp2 = true;
                         picSupport2.Visible = false;
+                        supportSlot2 = use;
                     }
 
                     else if (!GetMe(use) && self.Location == Support1())
@@ -919,6 +1270,7 @@ namespace CompGenerator
                         SetMe(use, true);
                         supp1 = false;
                         picSupport1.Visible = true;
+                        supportSlot1 = "";
                         if (!suppScreen)
                         {
                             self.Visible = false;
@@ -931,12 +1283,15 @@ namespace CompGenerator
                         SetMe(use, true);
                         supp2 = false;
                         picSupport2.Visible = true;
+                        supportSlot2 = "";
                         if (!suppScreen)
                         {
                             self.Visible = false;
                         }
                     }
                 }
+
+                changeComp();
             }
         }
        
@@ -1103,6 +1458,11 @@ namespace CompGenerator
         private void btnZen_Click(object sender, EventArgs e)
         {
             move("zen", btnZen, "support");
+        }
+
+        private void btnMercy_Click(object sender, EventArgs e)
+        {
+            move("mercy", btnMercy, "support");
         }
     }
 }

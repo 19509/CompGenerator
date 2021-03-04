@@ -150,6 +150,7 @@ namespace CompGenerator
             this.btnMercy.TabIndex = 11;
             this.btnMercy.UseVisualStyleBackColor = true;
             this.btnMercy.Visible = false;
+            this.btnMercy.Click += new System.EventHandler(this.btnMercy_Click);
             // 
             // btnBrig
             // 
@@ -205,23 +206,23 @@ namespace CompGenerator
             // 
             // lblCompInt
             // 
-            this.lblCompInt.AutoSize = true;
             this.lblCompInt.BackColor = System.Drawing.SystemColors.Control;
-            this.lblCompInt.Location = new System.Drawing.Point(150, 120);
+            this.lblCompInt.Location = new System.Drawing.Point(9, 120);
             this.lblCompInt.Name = "lblCompInt";
-            this.lblCompInt.Size = new System.Drawing.Size(118, 13);
+            this.lblCompInt.Size = new System.Drawing.Size(127, 27);
             this.lblCompInt.TabIndex = 16;
             this.lblCompInt.Text = "Compositional Integrity: ";
+            this.lblCompInt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblMapInt
             // 
-            this.lblMapInt.AutoSize = true;
             this.lblMapInt.BackColor = System.Drawing.SystemColors.Control;
             this.lblMapInt.Location = new System.Drawing.Point(441, 120);
             this.lblMapInt.Name = "lblMapInt";
-            this.lblMapInt.Size = new System.Drawing.Size(71, 13);
+            this.lblMapInt.Size = new System.Drawing.Size(113, 27);
             this.lblMapInt.TabIndex = 17;
             this.lblMapInt.Text = "Map Integrity:";
+            this.lblMapInt.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // picTank1
             // 
